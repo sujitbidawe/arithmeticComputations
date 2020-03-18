@@ -2,6 +2,8 @@
 
 declare -A resultDict
 
+count=0
+
 read -p "enter three numbers separated by space: " a b c
 echo "a=$a, b=$b, c=$c"
 
@@ -22,4 +24,8 @@ resultDict=( ["a+b*c"]=$result1 ["a*b+c"]=$result2 ["c+a/b"]=$result3 ["a%b+c"]=
 for key in "${!resultDict[@]}"
 do
 		echo "$key=${resultDict[$key]}"
+		resultArray[count++]=${resultDict[$key]}
+
 done
+
+echo "values in array: ${resultArray[@]}"
