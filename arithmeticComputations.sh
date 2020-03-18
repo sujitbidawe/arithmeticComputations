@@ -29,3 +29,26 @@ do
 done
 
 echo "values in array: ${resultArray[@]}"
+arrayLength=${#resultArray}
+
+declare -a sortedResArr
+
+echo -n "descending sorted array is: "
+readarray -t sortedResArr < <(printf '%s\n' "${resultArray[@]}" | sort -r --numeric-sort)
+echo "${sortedResArr[@]}"
+
+
+
+#for (( result=0; result<=$(( $arrayLength - 1)) ; result++ ))
+#do
+#		for (( nextResult=$(( $result + 1 )); nextResult<$arrayLength ; nextResult++ ))
+#		do
+#				if [[ ${resultArray[$result]} -lt ${resultArray[$nextResult]} ]]
+#				then
+#						temp=${resultArray[result]}
+#						resultArray[result]=${resultArray[nextResult]}
+#						resultArray[nextResult]=$temp
+#				fi
+#		done
+#done
+
