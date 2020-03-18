@@ -31,13 +31,16 @@ done
 echo "values in array: ${resultArray[@]}"
 arrayLength=${#resultArray}
 
-declare -a sortedResArr
+declare -a descendSortedResArr
+declare -a ascendSortedResArr
 
 echo -n "descending sorted array is: "
-readarray -t sortedResArr < <(printf '%s\n' "${resultArray[@]}" | sort -r --numeric-sort)
-echo "${sortedResArr[@]}"
+readarray -t descendSortedResArr < <(printf '%s\n' "${resultArray[@]}" | sort -r --numeric-sort)
+echo "${descendSortedResArr[@]}"
 
-
+echo -n "ascending sorted array is: "
+readarray -t ascendSortedResArr < <(printf '%s\n' "${resultArray[@]}" | sort --numeric-sort)
+echo "${ascendSortedResArr[@]}"
 
 #for (( result=0; result<=$(( $arrayLength - 1)) ; result++ ))
 #do
