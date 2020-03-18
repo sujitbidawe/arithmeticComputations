@@ -5,3 +5,6 @@ echo "a=$a, b=$b, c=$c"
 
 result1=$(( a+b*c ))
 echo "a+b*c=$result1"
+
+result2=$(( a*b+c ))
+echo "a*b+c=$result2"
